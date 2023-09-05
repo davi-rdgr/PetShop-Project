@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .section-serviços {
+            background-color: #21B6B6;
+            padding: 50px;
+        }
+
+        .section-serviços h2 {
+            font-size: 40px;
+            margin: 0px 0px 15px 110px;
+            padding: 0px;
+            color: #FFFFFF;
+            font-weight: 100;
+        }
+
+        .servicos-content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 1600px;
+            margin: 0 auto;
+        }
+
+        .serviços-content-cards a {
+            text-decoration: none;
+        }
+
+        .serviços-cards {
+            text-align: center;
+            background-color: #FFFFFF;
+            width: 450px;
+            height: 450px;
+            flex-direction: column;
+            display: flex;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            text-decoration: none;
+        }
+
+        .serviços-cards img {
+            margin: 0 auto;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .serviços-cards :nth-child(2) {
+            font-size: 28px;
+            color: #2C2A2A;
+        }
+
+        .serviços-cards :nth-child(3) {
+            font-size: 20px;
+            color: #2C2A2A;
+        }
+
+        .serviços-cards :nth-child(4) {
+            font-size: 15px;
+            color: #2C2A2A;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="header-section">
+            <div class="header-topside">
+                <a href="/páginas/index.html"><img class="petshop-icon" src="\images\petshopIcon.svg"
+                        alt="icone petshop"></a>
+                <div class="header-group-bar">
+                    <form action="/páginas/resultado-da-pesquisa" method="get">
+                        <span class="header-lupa"></span>
+                        <input class="header-searchbar" type="text" name="q" placeholder="Pesquisar">
+                    </form>
+                    <a href="/páginas/carrinhoVazio.html"><img class="carrinhoSvg" src="/images/carrinhoIcon.svg"
+                            alt="icone carrinho"></a>
+                </div>
+                <nav class="header-nave">
+                    <ul>
+                        <a href="/páginas/cadastroLogin.html">
+                            <li>Entrar|Cadastrar</li>
+                        </a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-botside">
+                <div>
+                    <nav class="header-nave header-nave1">
+                        <ul>
+                            <a href="/páginas/produtos.html">
+                                <li>Produtos</li>
+                            </a>
+                            <a href="/páginas/serviços.html">
+                                <li>Serviços</li>
+                            </a>
+                            <a href="/páginas/cadastroPet.html">
+                                <li>Meus Pets</li>
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <nav class="header-nave">
+                        <ul>
+                            <li>Mais</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="section-serviços">
+            <h2>Selecione o serviço</h2>
+            <div class="servicos-content">
+                <div class="serviços-content-cards">
+                    <a href="/páginas/agendamento.html">
+                        <div class="serviços-cards">
+                            <img src="/images/animal1.png" alt=" imagem animal tomando banho">
+                            <span>Banho</span>
+                            <span>R$ 40,00</span>
+                            <span>Revigore o pelo do seu companheiro com nosso relaxante banho, deixando-o limpo,
+                                cheiroso e
+                                pronto para brilhar</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="serviços-content-cards">
+                    <a href="/páginas/agendamento.html">
+                        <div class="serviços-cards">
+                            <img src="/images/animal3.png" alt="imagem animal sendo tosado">
+                            <span>Tosa</span>
+                            <span>R$ 35,00</span>
+                            <span>Proporcione ao seu pet um visual impecável com nossa tosa profissional, cuidadosamente
+                                executada para realçar sua beleza e conforto</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="serviços-content-cards">
+                    <a href="/páginas/agendamento.html">
+                        <div class="serviços-cards">
+                            <img src="/images/animal2.png" alt="imagem animal banho e tosa">
+                            <span>Banho e Tosa</span>
+                            <span>R$ 75,00</span>
+                            <span>O pacote completo de cuidados: um banho suave e um corte de pelo personalizado para
+                                garantir
+                                que seu pet esteja deslumbrante e feliz</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-section">
+            <div class="footer-group">
+                <div class="footer-comunicacao">
+                    <span>Institucional</span>
+                    <span><a href="#">Quem Somos</a></span>
+                    <span><a href="#">Política de Privacidade</a></span>
+                </div>
+                <div class="footer-comunicacao">
+                    <span>Produtos</span>
+                    <span><a href="#">Política de Entrega</a></span>
+                    <span><a href="#">Formas de Pagamento</a></span>
+                    <span><a href="#">Políica de Trocas e Devoluções</a></span>
+                    <span><a href="#">Dúvidas Frequentes</a></span>
+                    <span><a href="#">Frete Grátis - Especial</a></span>
+                    <span><a href="#">Política de Retirada</a></span>
+                </div>
+                <div class="footer-comunicacao">
+                    <span>Atendimento</span>
+                    <span><a href="#">Central do Cliente</a></span>
+                    <span><a href="#">Meus Pedidos</a></span>
+                    <span><a href="#">Fale Conosco</a></span>
+                    <span><a href="#">Dúvidas Frequentes</a></span>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

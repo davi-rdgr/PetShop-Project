@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        /* ITENS DO CARRINHO */
+        .section-carrinho-cheio {
+            padding: 50px;
+            background-color: #21B6B6;
+        }
+
+        .carrinho-cheio-content {
+            margin: 0 auto;
+            width: 1400px;
+            height: 600px;
+            display: grid;
+            gap: 15px;
+            grid-template-rows: repeat(2, auto);
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        .carrinho-cheio-produtos-content {
+            grid-row: 1 / 3;
+            grid-column: 1 / 7;
+            padding: 13px;
+            display: grid;
+            text-align: center;
+            background-color: #FFFFFF;
+            border-radius: 15px;
+        }
+
+        .carrinho-cheio-produtos-content table thead th {
+            color: #2C2A2A;
+            font-weight: 100;
+            height: 45px;
+        }
+
+        .carrinho-cheio-produtos-content table thead th:nth-child(1) {
+            padding-left: 15px;
+            text-align: left;
+        }
+
+        .carrinho-cheio-produtos-content table thead :nth-child(2),
+        .carrinho-cheio-produtos-content table thead :nth-child(3),
+        .carrinho-cheio-produtos-content table thead :nth-child(4) {
+            width: 100px;
+        }
+
+        .carrinho-cheio-collum {
+            grid-row: 1 / 3;
+            grid-column: 7 / 9;
+        }
+
+        .carrinho-tr td div :nth-child(1) {
+            color: #2C2A2A;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .carrinho-tr :nth-child(2) {
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .carrinho-tr :nth-child(3) {
+            font-size: 14px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .carrinho-tr :nth-child(4) img {
+            height: 20px;
+            color: black;
+        }
+
+        td {
+            border-bottom: 1px solid #DEDEDE;
+        }
+
+        .carrinho-engloba {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+        }
+
+        .carrinho-engloba img {
+            height: 65px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .carrinho-engloba div :nth-child(1) {
+            margin-bottom: 10px;
+        }
+
+        .carrinho-engloba span {
+            display: block;
+        }
+
+        .carrinho-engloba div :nth-child(2) {
+            color: #2C2A2A;
+            font-weight: 100;
+            font-size: 11px;
+        }
+
+        /* FRETE */
+
+        .carrinho-cheio-frete {
+            background-color: #FFFFFF;
+            height: 130px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carrinho-cheio-frete div span {
+            color: #21B6B6;
+        }
+
+        .carrinho-cheio-frete div form {
+            margin-top: 6px;
+        }
+
+        .carrinho-cheio-frete div form input {
+            padding: 12px;
+            width: 200px;
+            height: 25px;
+            border-radius: 15px;
+            border: 1px solid #DEDEDE;
+            color: #DEDEDE;
+        }
+
+        .carrinho-cheio-frete div form button {
+            color: #FFFFFF;
+            background-color: #888DDA;
+            border-radius: 15px;
+            padding: 12px;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* FINALIZAÇÃO DE PRODUTOS */
+
+        .carrinho-cheio-compra {
+            background-color: #FFFFFF;
+            margin-top: 15px;
+            border-radius: 15px;
+            height: 454px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carrinho-cheio-compra div {
+            width: 317px;
+        }
+
+        .carrinho-span-resumo {
+            margin-bottom: 140px;
+            display: block;
+        }
+
+        .carrinho-cheio-coisas {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+
+        .carrinho-span-resumo,
+        .carrinho-cheio-coisas :nth-child(1) {
+            color: #21B6B6;
+        }
+
+        .carrinho-cheio-coisas :nth-child(2) {
+            color: #2C2A2A;
+        }
+
+        .carrinho-cheio-compra div :nth-child(4) span {
+            font-weight: bold;
+            color: #2C2A2A;
+        }
+
+        .carrinho-cheio-compra div :nth-child(4) {
+            border-top: 1px solid #2C2A2A;
+        }
+
+        .carrinho-cheio-compra div :nth-child(5) {
+            background-color: #2ECBAA;
+            display: block;
+            margin: 0 auto;
+            width: 317px;
+            height: 45px;
+            border-radius: 100px;
+            border: none;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .carrinho-cheio-compra div :nth-child(6) {
+            background-color: #888DDA;
+            display: block;
+            margin: 0 auto;
+            width: 317px;
+            height: 45px;
+            border-radius: 100px;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .carrinho-cheio-compra div :nth-child(6) a {
+            text-decoration: none;
+            color: #FFFFFF;
+            border-radius: 100px;
+            padding: 10px 48px 10px 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="header-section">
+            <div class="header-topside">
+                <a href="/páginas/index.html"><img class="petshop-icon" src="\images\petshopIcon.svg"
+                        alt="icone petshop"></a>
+                <div class="header-group-bar">
+                    <form action="/páginas/resultado-da-pesquisa" method="get">
+                        <span class="header-lupa"></span>
+                        <input class="header-searchbar" type="text" name="q" placeholder="Pesquisar">
+                    </form>
+                    <a href="/páginas/carrinhoVazio.html"><img class="carrinhoSvg" src="/images/carrinhoIcon.svg"
+                            alt="icone carrinho"></a>
+                </div>
+                <nav class="header-nave">
+                    <ul>
+                        <a href="/páginas/cadastroLogin.html">
+                            <li>Entrar|Cadastrar</li>
+                        </a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-botside">
+                <div>
+                    <nav class="header-nave header-nave1">
+                        <ul>
+                            <a href="/páginas/produtos.html">
+                                <li>Produtos</li>
+                            </a>
+                            <a href="/páginas/serviços.html">
+                                <li>Serviços</li>
+                            </a>
+                            <a href="/páginas/cadastroPet.html">
+                                <li>Meus Pets</li>
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <nav class="header-nave">
+                        <ul>
+                            <li>Mais</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="section-carrinho-cheio">
+            <div class="carrinho-cheio-content">
+                <div class="carrinho-cheio-produtos-content">
+                    <table>
+                        <thead>
+                            <th>Produtos</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Remover</th>
+                        </thead>
+                        <tbody>
+                            <tr class="carrinho-tr">
+                                <td>
+                                    <div class="carrinho-engloba">
+                                        <img src="/images/ração 1.png" alt="imagem modelo de ração 1">
+                                        <div>
+                                            <span>Ração Seca PremieR Pet Golden para Gatos</span>
+                                            <span>Indicada para gatos, sem conservantes, corantes e aromatizantes.
+                                                Ingredientes naturais</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>R$ 55,90</td>
+                                <td>1</td>
+                                <td>
+                                    <img src="/images/lixeiraIcon.svg" alt="ícone de lixeira">
+                                </td>
+                            </tr>
+                            <tr class="carrinho-tr">
+                                <td>
+                                    <div class="carrinho-engloba">
+                                        <img src="/images/ração 1.png" alt="imagem modelo de ração 1">
+                                        <div>
+                                            <span>Ração Seca PremieR Pet Golden para Gatos</span>
+                                            <span>Indicada para gatos, sem conservantes, corantes e aromatizantes.
+                                                Ingredientes naturais</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>R$ 55,90</td>
+                                <td>1</td>
+                                <td>
+                                    <img src="/images/lixeiraIcon.svg" alt="ícone de lixeira">
+                                </td>
+                            </tr>
+                            <tr class="carrinho-tr">
+                                <td>
+                                    <div class="carrinho-engloba">
+                                        <img src="/images/ração 1.png" alt="imagem modelo de ração 1">
+                                        <div>
+                                            <span>Ração Seca PremieR Pet Golden para Gatos</span>
+                                            <span>Indicada para gatos, sem conservantes, corantes e aromatizantes.
+                                                Ingredientes naturais</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>R$ 55,90</td>
+                                <td>1</td>
+                                <td>
+                                    <img src="/images/lixeiraIcon.svg" alt="ícone de lixeira">
+                                </td>
+                            </tr>
+                            <tr class="carrinho-tr">
+                                <td>
+                                    <div class="carrinho-engloba">
+                                        <img src="/images/ração 1.png" alt="imagem modelo de ração 1">
+                                        <div>
+                                            <span>Ração Seca PremieR Pet Golden para Gatos</span>
+                                            <span>Indicada para gatos, sem conservantes, corantes e aromatizantes.
+                                                Ingredientes naturais</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>R$ 55,90</td>
+                                <td>1</td>
+                                <td>
+                                    <img src="/images/lixeiraIcon.svg" alt="ícone de lixeira">
+                                </td>
+                            </tr>
+                            <tr class="carrinho-tr">
+                                <td>
+                                    <div class="carrinho-engloba">
+                                        <img src="/images/ração 1.png" alt="imagem modelo de ração 1">
+                                        <div>
+                                            <span>Ração Seca PremieR Pet Golden para Gatos</span>
+                                            <span>Indicada para gatos, sem conservantes, corantes e aromatizantes.
+                                                Ingredientes naturais</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>R$ 55,90</td>
+                                <td>1</td>
+                                <td>
+                                    <img src="/images/lixeiraIcon.svg" alt="ícone de lixeira">
+                                </td>
+                            </tr>
+                            <tr class="carrinho-tr">
+                                <td>
+                                    <div class="carrinho-engloba">
+                                        <img src="/images/ração 1.png" alt="imagem modelo de ração 1">
+                                        <div>
+                                            <span>Ração Seca PremieR Pet Golden para Gatos</span>
+                                            <span>Indicada para gatos, sem conservantes, corantes e aromatizantes.
+                                                Ingredientes naturais</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>R$ 55,90</td>
+                                <td>1</td>
+                                <td>
+                                    <img src="/images/lixeiraIcon.svg" alt="ícone de lixeira">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="carrinho-cheio-collum">
+                    <div class="carrinho-cheio-frete">
+                        <div>
+                            <span>Calcule seu frete</span>
+                            <form action="#" method="get">
+                                <label for="cep"></label>
+                                <input type="text" name="cep" id="cep" placeholder="Digite seu CEP" required>
+                                <button type="submit">Calcular</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="carrinho-cheio-compra">
+                        <div>
+                            <span class="carrinho-span-resumo">Resumo do pedido</span>
+                            <div class="carrinho-cheio-coisas">
+                                <span>Descontos</span>
+                                <span>-R$39,90</span>
+                            </div>
+                            <div class="carrinho-cheio-coisas">
+                                <span>Frete</span>
+                                <span>R$12,95</span>
+                            </div>
+                            <div class="carrinho-cheio-coisas">
+                                <span>Total</span>
+                                <span>RS 273.50</span>
+                            </div>
+                            <button>Comprar</button>
+                            <button><a href="/produtos.html">Escolher mais produtos</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="footer-section">
+            <div class="footer-group">
+                <div class="footer-comunicacao">
+                    <span>Institucional</span>
+                    <span><a href="#">Quem Somos</a></span>
+                    <span><a href="#">Política de Privacidade</a></span>
+                </div>
+                <div class="footer-comunicacao">
+                    <span>Produtos</span>
+                    <span><a href="#">Política de Entrega</a></span>
+                    <span><a href="#">Formas de Pagamento</a></span>
+                    <span><a href="#">Políica de Trocas e Devoluções</a></span>
+                    <span><a href="#">Dúvidas Frequentes</a></span>
+                    <span><a href="#">Frete Grátis - Especial</a></span>
+                    <span><a href="#">Política de Retirada</a></span>
+                </div>
+                <div class="footer-comunicacao">
+                    <span>Atendimento</span>
+                    <span><a href="#">Central do Cliente</a></span>
+                    <span><a href="#">Meus Pedidos</a></span>
+                    <span><a href="#">Fale Conosco</a></span>
+                    <span><a href="#">Dúvidas Frequentes</a></span>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

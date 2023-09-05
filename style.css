@@ -1,0 +1,130 @@
+/* AS ESTILIZAÇÕES DESSA FOLHA SÃO REFERENTES AO HEADER E FOOTER, QUE POR SEREM FIXOS EM TODAS PARTES DA PÁGINA, ESTARÃO DIVIDIDAS. 
+O CONTEÚDO ÚNICO DE CADA PARTE DA PÁGINA ESTARÁ CONTIDA NO HEAD DE DETERMINADA PÁGINA, ENCONTRADA NO <style> </style> */
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Sarala;
+}
+
+* {
+    font-size: 18px;
+}
+
+/* HEADER // NAV */
+
+.header-section {
+    background-color: #21B6B6;
+}
+
+.header-topside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.petshop-icon {
+    height: 70px;
+}
+
+.header-group-bar {
+    display: flex;
+}
+
+.header-lupa::before {
+    content: url("images/lupaIcon.svg");
+    position: absolute;
+    top: 2.5%;
+    padding-left: 6px;
+}
+
+.header-searchbar {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+    width: 800px;
+    height: 40px;
+    border-radius: 15px;
+    color: #DEDEDE;
+    padding-left: 40px;
+    outline: none;
+    margin-right: 40px;
+}
+
+.carrinhoSvg {
+    height: 25px;
+    padding: 10px;
+}
+
+.header-botside {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 40px;
+    margin-bottom: 55px;
+}
+
+
+.header-nave ul li,
+.header-nave ul a {
+    color: #FFFFFF;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+.header-nave1 ul {
+    display: flex;
+    padding: 0;
+}
+
+.header-nave1 ul li {
+    margin-right: 50px;
+
+}
+
+/* FOOTER */
+
+footer {
+    padding-top: 55px;
+}
+
+.footer-section {
+    background-color: #21B6B6;
+    width: 100%;
+}
+
+.footer-group {
+    padding-top: 50px;
+    margin: 0 auto;
+    align-items: top;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-comunicacao {
+    width: 200px;
+    margin-bottom: 20px;
+
+}
+
+.footer-comunicacao span {
+    color: #FFFFFF;
+    display: block;
+    text-decoration: none;
+}
+
+.footer-comunicacao span a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.footer-comunicacao span:nth-child(1) {
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}

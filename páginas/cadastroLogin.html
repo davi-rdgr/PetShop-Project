@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesse sua conta</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        /* MAIN DA TELA DE CADASTRO */
+
+        .cadastro-section {
+            padding: 50px;
+            color: #FFFFFF;
+            background-color: #21B6B6;
+        }
+
+        .cadastro-card {
+            height: 550px;
+            width: 620px;
+            margin: 0 auto;
+            border: 1px solid #FFFFFF;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cadastro-h3 {
+            font-size: 45px;
+            font-weight: 100;
+            margin: 0px;
+        }
+
+        .cadastro-card span:nth-child(2) {
+            margin-bottom: 20px;
+        }
+
+        .cadastro-card :nth-child(5) {
+            color: #FFFFFF;
+            background-color: #2ECBAA;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            width: 480px;
+            height: 48px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .cadastro-card :nth-child(5) a {
+            padding: 10px 85px 10px 85px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .inputEmail,
+        .inputSenha {
+            height: 45px;
+            width: 430px;
+            border-radius: 15px;
+            outline: none;
+            padding-left: 50px;
+            border: none;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .inputEmail::placeholder,
+        .inputSenha::placeholder {
+            color: #cac9c9;
+        }
+
+        .iconEmail::before {
+            content: url("images/userIcon.svg");
+            position: absolute;
+            top: 47.2%;
+            padding-left: 15px;
+        }
+
+        .iconSenha::before {
+            content: url("images/chaveIcon.svg");
+            position: absolute;
+            top: 55.4%;
+            padding-left: 12px;
+        }
+
+        .cadastro-div {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cadastro-div a {
+            color: #DEDEDE;
+            font-size: 16px;
+        }
+
+        .cadastro-div button {
+            color: #FFFFFF;
+            background-color: #2ECBAA;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            height: 48px;
+            width: 170px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="header-section">
+            <div class="header-topside">
+                <a href="/páginas/index.html"><img class="petshop-icon" src="\images\petshopIcon.svg"
+                        alt="icone petshop"></a>
+                <div class="header-group-bar">
+                    <form action="/páginas/resultado-da-pesquisa" method="get">
+                        <span class="header-lupa"></span>
+                        <input class="header-searchbar" type="text" name="q" placeholder="Pesquisar">
+                    </form>
+                    <a href="/páginas/carrinhoVazio.html"><img class="carrinhoSvg" src="/images/carrinhoIcon.svg"
+                            alt="icone carrinho"></a>
+                </div>
+                <nav class="header-nave">
+                    <ul>
+                        <a href="/páginas/cadastroLogin.html">
+                            <li>Entrar|Cadastrar</li>
+                        </a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-botside">
+                <div>
+                    <nav class="header-nave header-nave1">
+                        <ul>
+                            <a href="/páginas/produtos.html">
+                                <li>Produtos</li>
+                            </a>
+                            <a href="/páginas/serviços.html">
+                                <li>Serviços</li>
+                            </a>
+                            <a href="/páginas/cadastroPet.html">
+                                <li>Meus Pets</li>
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <nav class="header-nave">
+                        <ul>
+                            <li>Mais</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="cadastro-section">
+            <div class="cadastro-card">
+                <h3 class="cadastro-h3">Acesse sua conta</h3>
+                <span>Insira suas credenciais abaixo para continuar</span>
+                <form action="processar_login.php" method="POST">
+                    <label for="email"></label>
+                    <span class="iconEmail"></span>
+                    <input class="inputEmail" type="email" placeholder="E-mail" id="email" name="email"
+                        required><br><br>
+                    <label for="senha"></label>
+                    <span class="iconSenha"></span>
+                    <input class="inputSenha" type="password" placeholder="Senha" id="senha" name="senha"
+                        required><br><br>
+                    <div class="cadastro-div">
+                        <a href="">Esqueci minha senha</a>
+                        <button type="submit">Entrar</button>
+                    </div>
+                </form>
+                <span>OU</span>
+                <button><a href="cadastroCriar.html">Não tem uma conta? <u>Cadastre-se</u></a></button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-section">
+            <div class="footer-group">
+                <div class="footer-comunicacao">
+                    <span>Institucional</span>
+                    <span><a href="#">Quem Somos</a></span>
+                    <span><a href="#">Política de Privacidade</a></span>
+                </div>
+                <div class="footer-comunicacao">
+                    <span>Produtos</span>
+                    <span><a href="#">Política de Entrega</a></span>
+                    <span><a href="#">Formas de Pagamento</a></span>
+                    <span><a href="#">Políica de Trocas e Devoluções</a></span>
+                    <span><a href="#">Dúvidas Frequentes</a></span>
+                    <span><a href="#">Frete Grátis - Especial</a></span>
+                    <span><a href="#">Política de Retirada</a></span>
+                </div>
+                <div class="footer-comunicacao">
+                    <span>Atendimento</span>
+                    <span><a href="#">Central do Cliente</a></span>
+                    <span><a href="#">Meus Pedidos</a></span>
+                    <span><a href="#">Fale Conosco</a></span>
+                    <span><a href="#">Dúvidas Frequentes</a></span>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>

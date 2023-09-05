@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastre seu Pet</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .cadastro-pet-section {
+            background-color: #21B6B6;
+            padding: 50px;
+        }
+
+        .cadastro-pet-title {
+            display: flex;
+            justify-content: space-around;
+            color: #FFFFFF;
+        }
+
+        .cadastro-pet-title div h2,
+        .cadastro-pet-title h2 {
+            margin: 0px;
+            padding: 0px;
+            font-size: 40px;
+            font-weight: 100;
+        }
+
+        .cadastro-pet-main {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+
+        /* PARTE DE CADASTRO PET */
+
+        .cadastro-pet-main {
+            display: flex;
+            align-items: center;
+        }
+
+        .cadastro-cadastro-pet form {
+            height: 200px;
+            width: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #FFFFFF;
+        }
+
+        .cadastro-form-divisor-1 input {
+            margin-top: 10px;
+            height: 45px;
+            width: 250px;
+            border-radius: 15px;
+            border: none;
+            padding-left: 20px;
+            color: #cac9c9;
+            outline: none;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .cadastro-form-divisor-2 {
+            width: 900px;
+            color: #FFFFFF;
+        }
+
+        .cadastro-form-divisor-2 input {
+            margin-top: 10px;
+        }
+
+        .cadastro-form-divisor-2 label {
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        input[type="radio"] {
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #555;
+            border-radius: 50%;
+        }
+
+        input[type="radio"]:checked {
+            background-color: #2C2A2A;
+            border-color: #2C2A2A;
+        }
+
+        .cadastro-form-button {
+            color: #FFFFFF;
+            background-color: #2ECBAA;
+            font-weight: bold;
+            border-radius: 50px;
+            border: none;
+            height: 40px;
+            width: 150px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+        }
+
+        /* PARTE DE PETS CADASTRADOS */
+
+        .cadastro-engloba {
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 15px;
+
+        }
+
+        .cadastro-cards-pets {
+            display: flex;
+            justify-content: space-between;
+            background-color: #21B6B6;
+            border-radius: 15px;
+            padding: 15px;
+            width: 280px;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .cadastro-cards-pets-2 {
+            margin-top: 15px;
+        }
+
+        .cadastro-cards-esquerdo span {
+            display: block;
+            color: #FFFFFF;
+        }
+
+        .cadastro-cards-esquerdo span:not(:first-child) {
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .cadastro-cards-esquerdo :nth-child(1) {
+
+            margin-bottom: 20px;
+        }
+
+        .cadastro-cards-direito img {
+            display: block;
+            height: 90px;
+            border-radius: 50%;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .lixeiraIconHTML {
+            margin-top: 37px;
+            margin-left: 60px;
+            cursor: pointer;
+        }
+
+        .lixeiraIconHTML path {
+            stroke: #FFFFFF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <section class="header-section">
+            <div class="header-topside">
+                <a href="/páginas/index.html"><img class="petshop-icon" src="\images\petshopIcon.svg"
+                        alt="icone petshop"></a>
+                <div class="header-group-bar">
+                    <form action="/páginas/resultado-da-pesquisa" method="get">
+                        <span class="header-lupa"></span>
+                        <input class="header-searchbar" type="text" name="q" placeholder="Pesquisar">
+                    </form>
+                    <a href="/páginas/carrinhoVazio.html"><img class="carrinhoSvg" src="/images/carrinhoIcon.svg"
+                            alt="icone carrinho"></a>
+                </div>
+                <nav class="header-nave">
+                    <ul>
+                        <a href="/páginas/cadastroLogin.html">
+                            <li>Entrar|Cadastrar</li>
+                        </a>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-botside">
+                <div>
+                    <nav class="header-nave header-nave1">
+                        <ul>
+                            <a href="/páginas/produtos.html">
+                                <li>Produtos</li>
+                            </a>
+                            <a href="/páginas/serviços.html">
+                                <li>Serviços</li>
+                            </a>
+                            <a href="/páginas/cadastroPet.html">
+                                <li>Meus Pets</li>
+                            </a>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <nav class="header-nave">
+                        <ul>
+                            <li>Mais</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="cadastro-pet-section">
+            <div class="cadastro-pet-title">
+                <div class="">
+                    <h2>Cadastro Pet</h2>
+                    <span>Insira as credenciais para cadastrar seu pet</span>
+                </div>
+                <h2>Pets cadastrados</h2>
+            </div>
+            <div class="cadastro-pet-main">
+                <div class="cadastro-cadastro-pet">
+                    <form action="processar_formulario.php" method="POST">
+                        <div class="cadastro-form-divisor-1">
+                            <input type="text" id="nome_pet" name="nome_pet" placeholder="Nome do Pet" required>
+                            <input type="text" id="idade_pet" name="idade_pet" placeholder="Idade do Pet" required>
+                            <input type="text" id="nome_responsavel" name="nome_responsavel"
+                                placeholder="Nome do Responsável" required>
+                            <input type="text" id="endereco_responsavel" name="endereco_responsavel"
+                                placeholder="Endereço do Responsável" required>
+                        </div>
+                        <div class="cadastro-form-divisor-2">
+                            <label for="especie">Espécie:</label><br>
+                            <input type="radio" id="canino" name="especie" value="canino" required>
+                            <label for="canino">Canino</label>
+                            <input type="radio" id="felino" name="especie" value="felino" required>
+                            <label for="felino">Felino</label><br>
+                            <label for="porte">Porte:</label><br>
+                            <input type="radio" id="pequeno" name="porte" value="pequeno" required>
+                            <label for="pequeno">Pequeno</label>
+                            <input type="radio" id="medio" name="porte" value="medio" required>
+                            <label for="medio">Médio</label>
+                            <input type="radio" id="grande" name="porte" value="grande" required>
+                            <label for="grande">Grande</label><br>
+                            <label for="temperamento">Temperamento:</label><br>
+                            <input type="radio" id="doci" name="temperamento" value="doci" required>
+                            <label for="doci">Dócil</label>
+                            <input type="radio" id="agressivo" name="temperamento" value="agressivo" required>
+                            <label for="agressivo">Agressivo</label>
+                            <br>
+                            <input class="cadastro-form-button" type="submit" value="Cadastrar">
+                        </div>
+                    </form>
+                </div>
+                <div class="cadastro-pets-cadastrados">
+                    <div class="cadastro-engloba">
+                        <div class="cadastro-cards-pets">
+                            <div class="cadastro-cards-esquerdo">
+                                <span>NOME DO PET</span>
+                                <span>Espécie: Canino</span>
+                                <span>Idade: 3 anos</span>
+                                <span>Porte: Pequeno</span>
+                                <span>Temperamento: Dócil</span>
+                            </div>
+                            <div class="cadastro-cards-direito">
+                                <img src="/images/cachorropintado.png" alt="imagem cachorro">
+                                <svg class="lixeiraIconHTML" width="29" height="31" viewBox="0 0 29 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M27.5002 6.5H2" stroke="black" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M11 14L11.75 21.5" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M18.5 14L17.75 21.5" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path
+                                        d="M6.5 6.5C6.58382 6.5 6.62573 6.5 6.66372 6.49904C7.89889 6.46774 8.98853 5.68236 9.40883 4.52048C9.42176 4.48473 9.43501 4.44499 9.46151 4.36546L9.60715 3.92856C9.73147 3.55562 9.79363 3.36914 9.87607 3.2108C10.205 2.5791 10.8136 2.14046 11.5169 2.02815C11.6932 2 11.8898 2 12.283 2H17.2171C17.6102 2 17.8069 2 17.9831 2.02815C18.6865 2.14046 19.295 2.5791 19.624 3.2108C19.7065 3.36914 19.7686 3.55562 19.8929 3.92856L20.0386 4.36546C20.065 4.44488 20.0783 4.48476 20.0912 4.52048C20.5115 5.68236 21.6011 6.46774 22.8364 6.49904C22.8743 6.5 22.9162 6.5 23 6.5"
+                                        stroke="black" stroke-width="2" />
+                                    <path
+                                        d="M24.3102 20.5987C24.0447 24.581 23.9119 26.5723 22.6144 27.7861C21.3169 29 19.3213 29 15.3301 29H14.17C10.1788 29 8.18318 29 6.88566 27.7861C5.58815 26.5723 5.4554 24.581 5.18991 20.5987L4.5 10.25M25 10.25L24.7 14.75"
+                                        stroke="black" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M27.5002 6.5H2" stroke="black" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M11 14L11.75 21.5" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M18.5 14L17.75 21.5" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path
+                                        d="M6.5 6.5C6.58382 6.5 6.62573 6.5 6.66372 6.49904C7.89889 6.46774 8.98853 5.68236 9.40883 4.52048C9.42176 4.48473 9.43501 4.44499 9.46151 4.36546L9.60715 3.92856C9.73147 3.55562 9.79363 3.36914 9.87607 3.2108C10.205 2.5791 10.8136 2.14046 11.5169 2.02815C11.6932 2 11.8898 2 12.283 2H17.2171C17.6102 2 17.8069 2 17.9831 2.02815C18.6865 2.14046 19.295 2.5791 19.624 3.2108C19.7065 3.36914 19.7686 3.55562 19.8929 3.92856L20.0386 4.36546C20.065 4.44488 20.0783 4.48476 20.0912 4.52048C20.5115 5.68236 21.6011 6.46774 22.8364 6.49904C22.8743 6.5 22.9162 6.5 23 6.5"
+                                        stroke="black" stroke-width="2" />
+                                    <path
+                                        d="M24.3102 20.5987C24.0447 24.581 23.9119 26.5723 22.6144 27.7861C21.3169 29 19.3213 29 15.3301 29H14.17C10.1788 29 8.18318 29 6.88566 27.7861C5.58815 26.5723 5.4554 24.581 5.18991 20.5987L4.5 10.25M25 10.25L24.7 14.75"
+                                        stroke="black" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="cadastro-cards-pets cadastro-cards-pets-2">
+                            <div class="cadastro-cards-esquerdo">
+                                <span>NOME DO PET</span>
+                                <span>Espécie: Canino</span>
+                                <span>Idade: 3 anos</span>
+                                <span>Porte: Pequeno</span>
+                                <span>Temperamento: Dócil</span>
+                            </div>
+                            <div class="cadastro-cards-direito">
+                                <img src="/images/gatopintado.png" alt="imagem gato">
+                                <svg class="lixeiraIconHTML" width="29" height="31" viewBox="0 0 29 31" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M27.5002 6.5H2" stroke="black" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M11 14L11.75 21.5" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M18.5 14L17.75 21.5" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path
+                                        d="M6.5 6.5C6.58382 6.5 6.62573 6.5 6.66372 6.49904C7.89889 6.46774 8.98853 5.68236 9.40883 4.52048C9.42176 4.48473 9.43501 4.44499 9.46151 4.36546L9.60715 3.92856C9.73147 3.55562 9.79363 3.36914 9.87607 3.2108C10.205 2.5791 10.8136 2.14046 11.5169 2.02815C11.6932 2 11.8898 2 12.283 2H17.2171C17.6102 2 17.8069 2 17.9831 2.02815C18.6865 2.14046 19.295 2.5791 19.624 3.2108C19.7065 3.36914 19.7686 3.55562 19.8929 3.92856L20.0386 4.36546C20.065 4.44488 20.0783 4.48476 20.0912 4.52048C20.5115 5.68236 21.6011 6.46774 22.8364 6.49904C22.8743 6.5 22.9162 6.5 23 6.5"
+                                        stroke="black" stroke-width="2" />
+                                    <path
+                                        d="M24.3102 20.5987C24.0447 24.581 23.9119 26.5723 22.6144 27.7861C21.3169 29 19.3213 29 15.3301 29H14.17C10.1788 29 8.18318 29 6.88566 27.7861C5.58815 26.5723 5.4554 24.581 5.18991 20.5987L4.5 10.25M25 10.25L24.7 14.75"
+                                        stroke="black" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M27.5002 6.5H2" stroke="black" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M11 14L11.75 21.5" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path d="M18.5 14L17.75 21.5" stroke="black" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <path
+                                        d="M6.5 6.5C6.58382 6.5 6.62573 6.5 6.66372 6.49904C7.89889 6.46774 8.98853 5.68236 9.40883 4.52048C9.42176 4.48473 9.43501 4.44499 9.46151 4.36546L9.60715 3.92856C9.73147 3.55562 9.79363 3.36914 9.87607 3.2108C10.205 2.5791 10.8136 2.14046 11.5169 2.02815C11.6932 2 11.8898 2 12.283 2H17.2171C17.6102 2 17.8069 2 17.9831 2.02815C18.6865 2.14046 19.295 2.5791 19.624 3.2108C19.7065 3.36914 19.7686 3.55562 19.8929 3.92856L20.0386 4.36546C20.065 4.44488 20.0783 4.48476 20.0912 4.52048C20.5115 5.68236 21.6011 6.46774 22.8364 6.49904C22.8743 6.5 22.9162 6.5 23 6.5"
+                                        stroke="black" stroke-width="2" />
+                                    <path
+                                        d="M24.3102 20.5987C24.0447 24.581 23.9119 26.5723 22.6144 27.7861C21.3169 29 19.3213 29 15.3301 29H14.17C10.1788 29 8.18318 29 6.88566 27.7861C5.58815 26.5723 5.4554 24.581 5.18991 20.5987L4.5 10.25M25 10.25L24.7 14.75"
+                                        stroke="black" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <section class="footer-section">
+            <div class="footer-group">
+                <div class="footer-comunicacao">
+                    <span>Institucional</span>
+                    <span><a href="#">Quem Somos</a></span>
+                    <span><a href="#">Política de Privacidade</a></span>
+                </div>
+                <div class="footer-comunicacao">
+                    <span>Produtos</span>
+                    <span><a href="#">Política de Entrega</a></span>
+                    <span><a href="#">Formas de Pagamento</a></span>
+                    <span><a href="#">Políica de Trocas e Devoluções</a></span>
+                    <span><a href="#">Dúvidas Frequentes</a></span>
+                    <span><a href="#">Frete Grátis - Especial</a></span>
+                    <span><a href="#">Política de Retirada</a></span>
+                </div>
+                <div class="footer-comunicacao">
+                    <span>Atendimento</span>
+                    <span><a href="#">Central do Cliente</a></span>
+                    <span><a href="#">Meus Pedidos</a></span>
+                    <span><a href="#">Fale Conosco</a></span>
+                    <span><a href="#">Dúvidas Frequentes</a></span>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+
+</html>
